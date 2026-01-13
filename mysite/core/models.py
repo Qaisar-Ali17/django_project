@@ -6,9 +6,9 @@ from django.utils import timezone
 class Tweet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField(max_length=200)
-    photo = models.ImageField(upload_to='tweets/photo/', blank =True, null=True)
-    created_at = models.DateTimeField(default= timezone.now)
-    Updated_at = models.DateTimeField(auto_now=True)
-    
-def __str__ (self):
-      return f"{self.user.username} - {self.text[:20]}"
+    photo = models.ImageField(upload_to='tweets/photo/', blank=True, null=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.text[:20]}"
